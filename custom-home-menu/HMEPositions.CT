@@ -1,32 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="34">
+<CheatTable CheatEngineTableVersion="18">
   <CheatEntries>
     <CheatEntry>
       <ID>66</ID>
       <Description>"SLEEP"</Description>
       <Options moHideChildren="1"/>
-      <LastState Value="" RealAddress="00000000"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>69</ID>
           <Description>"Top Screen"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
             <CheatEntry>
               <ID>71</ID>
               <Description>"Color"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>93</ID>
                   <Description>"Background"</Description>
-                  <LastState Value="43 4C 54" RealAddress="00001CD4"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001CD4"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00001CD4</Address>
@@ -34,8 +38,9 @@
                 <CheatEntry>
                   <ID>96</ID>
                   <Description>"Stripes"</Description>
-                  <LastState Value="00 00 00" RealAddress="00001CD0"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001CD0"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00001CD4-4</Address>
@@ -43,8 +48,9 @@
                 <CheatEntry>
                   <ID>97</ID>
                   <Description>"Glow"</Description>
-                  <LastState Value="01 00 00" RealAddress="00001CD8"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001CD8"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00001CD4+4</Address>
@@ -52,8 +58,9 @@
                 <CheatEntry>
                   <ID>98</ID>
                   <Description>"Header"</Description>
-                  <LastState Value="00 00 A0" RealAddress="00001D70"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001D70"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>1D70</Address>
@@ -61,8 +68,9 @@
                 <CheatEntry>
                   <ID>99</ID>
                   <Description>"Text"</Description>
-                  <LastState Value="00 00 40" RealAddress="00001DA4"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001DA4"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>1DA4</Address>
@@ -70,8 +78,9 @@
                 <CheatEntry>
                   <ID>100</ID>
                   <Description>"Line"</Description>
-                  <LastState Value="00 00 80" RealAddress="00001E24"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001E24"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>1E24</Address>
@@ -79,8 +88,9 @@
                 <CheatEntry>
                   <ID>101</ID>
                   <Description>"Footer"</Description>
-                  <LastState Value="01 04 02" RealAddress="00001EA8"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001EA8"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>1EA8</Address>
@@ -91,34 +101,39 @@
               <ID>73</ID>
               <Description>"Position"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>76</ID>
                   <Description>"Header Y"</Description>
-                  <LastState Value="20" RealAddress="00001FE0"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001FE0"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00001FC4+1C</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>78</ID>
                   <Description>"Main Y"</Description>
-                  <LastState Value="15.21319962" RealAddress="00002070"/>
+                  <LastState Value="??" Activated="0" RealAddress="00002070"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00002054+1C</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>82</ID>
                   <Description>"Line Y"</Description>
-                  <LastState Value="3.249421621E-9" RealAddress="00002218"/>
+                  <LastState Value="??" Activated="0" RealAddress="00002218"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>000021FC+1C</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>80</ID>
                   <Description>"Footer Y"</Description>
-                  <LastState Value="10" RealAddress="00002170"/>
+                  <LastState Value="??" Activated="0" RealAddress="00002170"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00002154+1C</Address>
                 </CheatEntry>
@@ -130,21 +145,24 @@
           <ID>70</ID>
           <Description>"Bottom Screen"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
             <CheatEntry>
               <ID>72</ID>
               <Description>"Color"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>92</ID>
                   <Description>"Background"</Description>
-                  <LastState Value="00 00 00" RealAddress="00001260"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001260"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00001260</Address>
@@ -152,8 +170,9 @@
                 <CheatEntry>
                   <ID>94</ID>
                   <Description>"Stripes"</Description>
-                  <LastState Value="0C 00 00" RealAddress="0000125C"/>
+                  <LastState Value="??" Activated="0" RealAddress="0000125C"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00001260-4</Address>
@@ -161,8 +180,9 @@
                 <CheatEntry>
                   <ID>95</ID>
                   <Description>"Glow"</Description>
-                  <LastState Value="00 00 48" RealAddress="00001264"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001264"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00001260+4</Address>
@@ -170,8 +190,9 @@
                 <CheatEntry>
                   <ID>103</ID>
                   <Description>"Text"</Description>
-                  <LastState Value="00 02 02" RealAddress="000012FC"/>
+                  <LastState Value="??" Activated="0" RealAddress="000012FC"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>000012FC</Address>
@@ -180,14 +201,16 @@
                   <ID>106</ID>
                   <Description>"Button"</Description>
                   <Options moHideChildren="1"/>
-                  <LastState Value="" RealAddress="00000000"/>
+                  <LastState Value="" Activated="0" RealAddress="00000000"/>
+                  <Color>80000008</Color>
                   <GroupHeader>1</GroupHeader>
                   <CheatEntries>
                     <CheatEntry>
                       <ID>108</ID>
                       <Description>"Button Text"</Description>
-                      <LastState Value="0C 00 00" RealAddress="000014D4"/>
+                      <LastState Value="??" Activated="0" RealAddress="000014D4"/>
                       <ShowAsHex>1</ShowAsHex>
+                      <Color>80000008</Color>
                       <VariableType>Array of byte</VariableType>
                       <ByteLength>3</ByteLength>
                       <Address>0x000014D4</Address>
@@ -195,8 +218,9 @@
                     <CheatEntry>
                       <ID>107</ID>
                       <Description>"Button Text Mask"</Description>
-                      <LastState Value="00 00 00" RealAddress="000014A0"/>
+                      <LastState Value="??" Activated="0" RealAddress="000014A0"/>
                       <ShowAsHex>1</ShowAsHex>
+                      <Color>80000008</Color>
                       <VariableType>Array of byte</VariableType>
                       <ByteLength>3</ByteLength>
                       <Address>0x000014A0</Address>
@@ -204,8 +228,9 @@
                     <CheatEntry>
                       <ID>110</ID>
                       <Description>"Button Color L"</Description>
-                      <LastState Value="00 00 00" RealAddress="0000132C"/>
+                      <LastState Value="??" Activated="0" RealAddress="0000132C"/>
                       <ShowAsHex>1</ShowAsHex>
+                      <Color>80000008</Color>
                       <VariableType>Array of byte</VariableType>
                       <ByteLength>3</ByteLength>
                       <Address>0x0000132C</Address>
@@ -213,8 +238,9 @@
                     <CheatEntry>
                       <ID>109</ID>
                       <Description>"Button Color R"</Description>
-                      <LastState Value="0C 00 00" RealAddress="000013E4"/>
+                      <LastState Value="??" Activated="0" RealAddress="000013E4"/>
                       <ShowAsHex>1</ShowAsHex>
+                      <Color>80000008</Color>
                       <VariableType>Array of byte</VariableType>
                       <ByteLength>3</ByteLength>
                       <Address>0x000013E4</Address>
@@ -222,7 +248,8 @@
                     <CheatEntry>
                       <ID>121</ID>
                       <Description>"Remove Button"</Description>
-                      <LastState/>
+                      <LastState Activated="0"/>
+                      <Color>80000008</Color>
                       <VariableType>Auto Assembler Script</VariableType>
                       <AssemblerScript>[ENABLE]
 132C:
@@ -244,8 +271,9 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>104</ID>
                   <Description>"Line"</Description>
-                  <LastState Value="00 00 4D" RealAddress="00001554"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001554"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>0x00001554</Address>
@@ -253,8 +281,9 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>105</ID>
                   <Description>"Footer"</Description>
-                  <LastState Value="00 00 4D" RealAddress="0000122C"/>
+                  <LastState Value="??" Activated="0" RealAddress="0000122C"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>0x0000122C</Address>
@@ -265,48 +294,55 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
               <ID>74</ID>
               <Description>"Position"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>89</ID>
                   <Description>"Text Y"</Description>
-                  <LastState Value="6.165713243E-44" RealAddress="00001A10"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001A10"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>000019F4+1C</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>86</ID>
                   <Description>"Line Y"</Description>
-                  <LastState Value="0" RealAddress="000018F4"/>
+                  <LastState Value="??" Activated="0" RealAddress="000018F4"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>000018D8+1C</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>91</ID>
                   <Description>"Button Y"</Description>
-                  <LastState Value="1" RealAddress="000016DC"/>
+                  <LastState Value="??" Activated="0" RealAddress="000016DC"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>000016C0+1C</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>88</ID>
                   <Description>"Button Text Y"</Description>
-                  <LastState Value="6.416388532E-10" RealAddress="00001868"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001868"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00001868</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>87</ID>
                   <Description>"Button Text Mask Y"</Description>
-                  <LastState Value="2" RealAddress="000017E4"/>
+                  <LastState Value="??" Activated="0" RealAddress="000017E4"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>000017E4</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>84</ID>
                   <Description>"Footer Y"</Description>
-                  <LastState Value="0" RealAddress="00001974"/>
+                  <LastState Value="??" Activated="0" RealAddress="00001974"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00001958+1C</Address>
                 </CheatEntry>
@@ -320,14 +356,15 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
       <ID>12</ID>
       <Description>"HUD"</Description>
       <Options moHideChildren="1"/>
-      <LastState Value="" Activated="1" RealAddress="00000000"/>
+      <LastState Value="" Activated="0" RealAddress="00000000"/>
+      <Color>80000008</Color>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>13</ID>
           <Description>"Playcoin"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
           <Color>05C9FA</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -335,35 +372,39 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
               <ID>16</ID>
               <Description>"Position"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" Activated="1" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>0</ID>
                   <Description>"Icon X"</Description>
-                  <LastState Value="-174" RealAddress="00009B10"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009B10"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>9B10</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>1</ID>
                   <Description>"Icon Y"</Description>
-                  <LastState Value="51255" Activated="1" RealAddress="00009B14"/>
-                  <ShowAsSigned>0</ShowAsSigned>
+                  <LastState Value="??" Activated="0" RealAddress="00009B14"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>9B14</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>4</ID>
                   <Description>"Text X"</Description>
-                  <LastState Value="22" RealAddress="00009BB8"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009BB8"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>9BB8</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>5</ID>
                   <Description>"Text Y"</Description>
-                  <LastState Value="5125" Activated="1" RealAddress="00009BBC"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009BBC"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>9BBC</Address>
                 </CheatEntry>
@@ -373,14 +414,16 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
               <ID>17</ID>
               <Description>"Color"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>24</ID>
                   <Description>"Circle"</Description>
-                  <LastState Value="FF FF FF" RealAddress="00008AF8"/>
+                  <LastState Value="??" Activated="0" RealAddress="00008AF8"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00008AF8</Address>
@@ -388,8 +431,9 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>23</ID>
                   <Description>"Outer"</Description>
-                  <LastState Value="B4 B4 00" RealAddress="00008AFC"/>
+                  <LastState Value="??" Activated="0" RealAddress="00008AFC"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00008AFC</Address>
@@ -397,8 +441,9 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>25</ID>
                   <Description>"Inner"</Description>
-                  <LastState Value="FF FF FF" RealAddress="00008B00"/>
+                  <LastState Value="??" Activated="0" RealAddress="00008B00"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00008B00</Address>
@@ -411,7 +456,7 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
           <ID>14</ID>
           <Description>"Steps"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
           <Color>808080</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -420,33 +465,38 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
               <Description>"Position"</Description>
               <Options moHideChildren="1"/>
               <LastState Value="" Activated="1" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>6</ID>
                   <Description>"Walk Icon X"</Description>
-                  <LastState Value="-58" RealAddress="00009A00"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009A00"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00009A00</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>7</ID>
                   <Description>"Walk Icon Y"</Description>
-                  <LastState Value="2555" Activated="1" RealAddress="00009A04"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009A04"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00009A04</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>8</ID>
                   <Description>"Walk Text X"</Description>
-                  <LastState Value="22" RealAddress="00009A88"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009A88"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00009A88</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>9</ID>
                   <Description>"Walk Text Y"</Description>
-                  <LastState Value="2555" Activated="1" RealAddress="00009A8C"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009A8C"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00009A8C</Address>
                 </CheatEntry>
@@ -455,7 +505,8 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
             <CheatEntry>
               <ID>19</ID>
               <Description>"Color"</Description>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
             </CheatEntry>
           </CheatEntries>
@@ -464,7 +515,7 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
           <ID>15</ID>
           <Description>"Net"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
           <Color>FF9300</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -472,62 +523,71 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
               <ID>20</ID>
               <Description>"Position"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>10</ID>
                   <Description>"Antenna (L) X"</Description>
-                  <LastState Value="-196" RealAddress="000096BC"/>
+                  <LastState Value="??" Activated="0" RealAddress="000096BC"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>96BC</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>42</ID>
                   <Description>"Antenna (L) Y"</Description>
-                  <LastState Value="110" RealAddress="000096C0"/>
+                  <LastState Value="??" Activated="0" RealAddress="000096C0"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>96C0</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>11</ID>
                   <Description>"Antenna (R) X"</Description>
-                  <LastState Value="-185" RealAddress="0000973C"/>
+                  <LastState Value="??" Activated="0" RealAddress="0000973C"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>973C</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>43</ID>
                   <Description>"Antenna (R) Y"</Description>
-                  <LastState Value="110" RealAddress="00009740"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009740"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>9740</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>40</ID>
                   <Description>"NetMode X"</Description>
-                  <LastState Value="-174" RealAddress="000098BC"/>
+                  <LastState Value="??" Activated="0" RealAddress="000098BC"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>000098BC</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>41</ID>
                   <Description>"NetMode Y"</Description>
-                  <LastState Value="118" RealAddress="000098C0"/>
+                  <LastState Value="??" Activated="0" RealAddress="000098C0"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>000098C0</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>38</ID>
                   <Description>"NetMode Base X"</Description>
-                  <LastState Value="1" RealAddress="00009814"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009814"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00009814</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>39</ID>
                   <Description>"NetMode Base Y"</Description>
-                  <LastState Value="1" RealAddress="00009818"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009818"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00009818</Address>
                 </CheatEntry>
@@ -537,13 +597,14 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
               <ID>21</ID>
               <Description>"Color"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>45</ID>
                   <Description>"Streetpass (L)"</Description>
-                  <LastState Value="50 DC 3C" RealAddress="00009008"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009008"/>
                   <ShowAsHex>1</ShowAsHex>
                   <Color>15EA55</Color>
                   <VariableType>Array of byte</VariableType>
@@ -553,7 +614,7 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>49</ID>
                   <Description>"Streetpass (R)"</Description>
-                  <LastState Value="50 DC 3C" RealAddress="00008F2C"/>
+                  <LastState Value="??" Activated="0" RealAddress="00008F2C"/>
                   <ShowAsHex>1</ShowAsHex>
                   <Color>15EA55</Color>
                   <VariableType>Array of byte</VariableType>
@@ -563,7 +624,7 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>46</ID>
                   <Description>"Wi-Fi (L)"</Description>
-                  <LastState Value="28 B4 F0" RealAddress="00009000"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009000"/>
                   <ShowAsHex>1</ShowAsHex>
                   <Color>FBB659</Color>
                   <VariableType>Array of byte</VariableType>
@@ -573,7 +634,7 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>48</ID>
                   <Description>"Wi-Fi (R)"</Description>
-                  <LastState Value="28 B4 F0" RealAddress="00008F24"/>
+                  <LastState Value="??" Activated="0" RealAddress="00008F24"/>
                   <ShowAsHex>1</ShowAsHex>
                   <Color>FBB659</Color>
                   <VariableType>Array of byte</VariableType>
@@ -583,8 +644,9 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>50</ID>
                   <Description>"No Signal (L)"</Description>
-                  <LastState Value="80 80 80" RealAddress="00009004"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009004"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00009004</Address>
@@ -592,8 +654,9 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>51</ID>
                   <Description>"No Signal (R)"</Description>
-                  <LastState Value="80 80 80" RealAddress="00008F28"/>
+                  <LastState Value="??" Activated="0" RealAddress="00008F28"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00008F28</Address>
@@ -601,8 +664,9 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>52</ID>
                   <Description>"Connection Disabled (L)"</Description>
-                  <LastState Value="78 78 78" RealAddress="0000900C"/>
+                  <LastState Value="??" Activated="0" RealAddress="0000900C"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>0000900C</Address>
@@ -610,8 +674,9 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                 <CheatEntry>
                   <ID>53</ID>
                   <Description>"Connection Disabled (R)"</Description>
-                  <LastState Value="78 78 78" RealAddress="00008F30"/>
+                  <LastState Value="??" Activated="0" RealAddress="00008F30"/>
                   <ShowAsHex>1</ShowAsHex>
+                  <Color>80000008</Color>
                   <VariableType>Array of byte</VariableType>
                   <ByteLength>3</ByteLength>
                   <Address>00008F30</Address>
@@ -624,7 +689,7 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
           <ID>26</ID>
           <Description>"Battery"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" RealAddress="00000000"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
           <Color>FEBF01</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
@@ -632,20 +697,23 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
               <ID>27</ID>
               <Description>"Position"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>64</ID>
                   <Description>"Battery X"</Description>
-                  <LastState Value="168" RealAddress="00009E3C"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009E3C"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00009E3C</Address>
                 </CheatEntry>
                 <CheatEntry>
                   <ID>65</ID>
                   <Description>"Battery Y"</Description>
-                  <LastState Value="120" RealAddress="00009E40"/>
+                  <LastState Value="??" Activated="0" RealAddress="00009E40"/>
+                  <Color>80000008</Color>
                   <VariableType>Float</VariableType>
                   <Address>00009E40</Address>
                 </CheatEntry>
@@ -655,20 +723,22 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
               <ID>28</ID>
               <Description>"Color"</Description>
               <Options moHideChildren="1"/>
-              <LastState Value="" RealAddress="00000000"/>
+              <LastState Value="" Activated="0" RealAddress="00000000"/>
+              <Color>80000008</Color>
               <GroupHeader>1</GroupHeader>
               <CheatEntries>
                 <CheatEntry>
                   <ID>29</ID>
                   <Description>"Default"</Description>
                   <Options moHideChildren="1"/>
-                  <LastState Value="" RealAddress="00000000"/>
+                  <LastState Value="" Activated="0" RealAddress="00000000"/>
+                  <Color>80000008</Color>
                   <GroupHeader>1</GroupHeader>
                   <CheatEntries>
                     <CheatEntry>
                       <ID>32</ID>
                       <Description>"Inner"</Description>
-                      <LastState Value="23 AA E6" RealAddress="00008CC4"/>
+                      <LastState Value="??" Activated="0" RealAddress="00008CC4"/>
                       <ShowAsHex>1</ShowAsHex>
                       <Color>E7CC32</Color>
                       <VariableType>Array of byte</VariableType>
@@ -678,7 +748,7 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                     <CheatEntry>
                       <ID>35</ID>
                       <Description>"Background"</Description>
-                      <LastState Value="23 AF E6" RealAddress="00008E84"/>
+                      <LastState Value="??" Activated="0" RealAddress="00008E84"/>
                       <ShowAsHex>1</ShowAsHex>
                       <Color>F8B607</Color>
                       <VariableType>Array of byte</VariableType>
@@ -691,13 +761,14 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                   <ID>30</ID>
                   <Description>"Charging"</Description>
                   <Options moHideChildren="1"/>
-                  <LastState Value="" RealAddress="00000000"/>
+                  <LastState Value="" Activated="0" RealAddress="00000000"/>
+                  <Color>80000008</Color>
                   <GroupHeader>1</GroupHeader>
                   <CheatEntries>
                     <CheatEntry>
                       <ID>33</ID>
                       <Description>"Inner"</Description>
-                      <LastState Value="F5 7D 41" RealAddress="00008D94"/>
+                      <LastState Value="??" Activated="0" RealAddress="00008D94"/>
                       <ShowAsHex>1</ShowAsHex>
                       <Color>FBE904</Color>
                       <VariableType>Array of byte</VariableType>
@@ -707,7 +778,7 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                     <CheatEntry>
                       <ID>34</ID>
                       <Description>"Charger"</Description>
-                      <LastState Value="32 32 32" RealAddress="00008E28"/>
+                      <LastState Value="??" Activated="0" RealAddress="00008E28"/>
                       <ShowAsHex>1</ShowAsHex>
                       <Color>727272</Color>
                       <VariableType>Array of byte</VariableType>
@@ -717,7 +788,7 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
                     <CheatEntry>
                       <ID>37</ID>
                       <Description>"Background"</Description>
-                      <LastState Value="FF 73 2E" RealAddress="00008E98"/>
+                      <LastState Value="??" Activated="0" RealAddress="00008E98"/>
                       <ShowAsHex>1</ShowAsHex>
                       <Color>42A0FF</Color>
                       <VariableType>Array of byte</VariableType>
@@ -734,48 +805,55 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
           <ID>54</ID>
           <Description>"Time"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
             <CheatEntry>
               <ID>56</ID>
               <Description>"Hours X"</Description>
-              <LastState Value="-19" Activated="1" RealAddress="00009CCC"/>
+              <LastState Value="??" Activated="0" RealAddress="00009CCC"/>
+              <Color>80000008</Color>
               <VariableType>Float</VariableType>
               <Address>00009CCC</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>57</ID>
               <Description>"Hours Y"</Description>
-              <LastState Value="119" RealAddress="00009CD0"/>
+              <LastState Value="??" Activated="0" RealAddress="00009CD0"/>
+              <Color>80000008</Color>
               <VariableType>Float</VariableType>
               <Address>00009CD0</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>58</ID>
               <Description>" : X"</Description>
-              <LastState Value="0" Activated="1" RealAddress="00009D48"/>
+              <LastState Value="??" Activated="0" RealAddress="00009D48"/>
+              <Color>80000008</Color>
               <VariableType>Float</VariableType>
               <Address>00009D48</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>59</ID>
               <Description>" : Y"</Description>
-              <LastState Value="119" RealAddress="00009D4C"/>
+              <LastState Value="??" Activated="0" RealAddress="00009D4C"/>
+              <Color>80000008</Color>
               <VariableType>Float</VariableType>
               <Address>00009D4C</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>60</ID>
               <Description>"Minutes X"</Description>
-              <LastState Value="7" Activated="1" RealAddress="00009DC0"/>
+              <LastState Value="??" Activated="0" RealAddress="00009DC0"/>
+              <Color>80000008</Color>
               <VariableType>Float</VariableType>
               <Address>00009DC0</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>61</ID>
               <Description>"Minutes Y"</Description>
-              <LastState Value="119" RealAddress="00009DC4"/>
+              <LastState Value="??" Activated="0" RealAddress="00009DC4"/>
+              <Color>80000008</Color>
               <VariableType>Float</VariableType>
               <Address>00009DC4</Address>
             </CheatEntry>
@@ -785,20 +863,23 @@ db EB EB EB 00 FF 8C B4 FF 00 00 14 FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
           <ID>55</ID>
           <Description>"Date"</Description>
           <Options moHideChildren="1"/>
-          <LastState Value="" Activated="1" RealAddress="00000000"/>
+          <LastState Value="" Activated="0" RealAddress="00000000"/>
+          <Color>80000008</Color>
           <GroupHeader>1</GroupHeader>
           <CheatEntries>
             <CheatEntry>
               <ID>62</ID>
               <Description>"Day/Month X"</Description>
-              <LastState Value="18" RealAddress="00009C40"/>
+              <LastState Value="??" Activated="0" RealAddress="00009C40"/>
+              <Color>80000008</Color>
               <VariableType>Float</VariableType>
               <Address>00009C40</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>63</ID>
               <Description>"Day/Month Y"</Description>
-              <LastState Value="22342" Activated="1" RealAddress="00009C44"/>
+              <LastState Value="??" Activated="0" RealAddress="00009C44"/>
+              <Color>80000008</Color>
               <VariableType>Float</VariableType>
               <Address>00009C44</Address>
             </CheatEntry>
