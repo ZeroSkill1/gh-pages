@@ -60,10 +60,14 @@
         >
         <ul>
           <li>
-            <a href="#editing-applet-color">I - Changing the Applet Icon Colors</a>
+            <a href="#editing-applet-color"
+              >I - Changing the Applet Icon Colors</a
+            >
           </li>
           <li>
-            <a href="#editing-banner-color">II - Changing the Applet Banner Colors</a>
+            <a href="#editing-banner-color"
+              >II - Changing the Applet Banner Colors</a
+            >
           </li>
         </ul>
       </li>
@@ -71,11 +75,17 @@
         <a href="#editing-hud">V - Editing the HUD</a>
       </li>
       <li>
-        <a href="#rebuilding-and-installing">VI - Repacking, Encrypting, and Installing</a>
+        <a href="#rebuilding-and-installing"
+          >VI - Repacking, Encrypting, and Installing</a
+        >
         <ul>
           <li><a href="#repack-cxi">I - Repacking</a></li>
           <li><a href="#encrypting-cia">II - Encrypting the CIA</a></li>
-          <li><a href="#installing-custom-home-menu">III - Installing the Custom HOME Menu</a></li>
+          <li>
+            <a href="#installing-custom-home-menu"
+              >III - Installing the Custom HOME Menu</a
+            >
+          </li>
         </ul>
       </li>
     </ol>
@@ -137,8 +147,8 @@
       </li>
       <li>The <a href="HMEPositions.CT">HME Positions by DeKay.CT</a> file</li>
       <li>
-        <a href="http://www.color-hex.com/">Hex Colors</a>, to get hex values
-        from colors
+        <a href="http://www.color-hex.com/" target="_blank">Hex Colors</a>, to
+        get hex values from colors
       </li>
       <li>
         <a
@@ -155,10 +165,13 @@
         Dumping our original HOME Menu as a CIA into <code>sd:/gm9/out</code>.
       </li>
       <li>
-        Making a copy of the dumped CIA, called <code>backup_&ltTitle ID&gt.cia</code>, and placing it in a safe location in case of failure.
+        Making a copy of the dumped CIA, called
+        <code>backup_&ltTitle ID&gt.cia</code>, and placing it in a safe
+        location in case of failure.
       </li>
       <li>
-        Decrypting the first copy of the dumped CIA, which will enable us to make modifications to it later.
+        Decrypting the first copy of the dumped CIA, which will enable us to
+        make modifications to it later.
       </li>
     </ul>
     <h3>Part I - 3DS</h3>
@@ -211,7 +224,8 @@
         You should now have two CIAs. <br />
         On the one that doesn't start with <code>backup_</code>, press A, <br />
         <code>CIA image options...</code> ->
-        <code>Decrypt file (0:/gm9/out)</code>, and wait until the process finishes. Press A once it's complete.
+        <code>Decrypt file (0:/gm9/out)</code>, and wait until the process
+        finishes. Press A once it's complete.
       </li>
       <li>
         Press the HOME button, and choose <code>Poweroff system</code> to turn
@@ -237,7 +251,11 @@
     <h3 id="homemenu-extract-decompress">
       Section II - Unpacking and Decompressing the HOME Menu
     </h3>
-    <p>In this section, we will be extracting the CIA dumped in <a href="#preparation">Section I</a>, and learning how to decompress/compress files inside it.</p>
+    <p>
+      In this section, we will be extracting the CIA dumped in
+      <a href="#preparation">Section I</a>, and learning how to
+      decompress/compress files inside it.
+    </p>
     <h3 id="extract-home-menu">Part I - Extracting the HOME Menu</h3>
     <p>At this point, you should have a folder that looks similar to this:</p>
     <div class="blue">
@@ -266,8 +284,8 @@
         In the same command prompt, run the following command: <br />
         <p class="multiline-code">
           3dstool -xtf cxi &ltcontent file name&gt --header Header.bin
-          --extendedheader ExHeader.bin --romfs RomFS.bin --exefs ExeFS.bin --plain
-          PlainRegion.bin
+          --extendedheader ExHeader.bin --romfs RomFS.bin --exefs ExeFS.bin
+          --plain PlainRegion.bin
         </p>
         Where <code>&ltcontent file name&gt</code> is the name of the file
         starting with <code>Content.0000</code>.
@@ -294,9 +312,9 @@
     </h3>
     <p>
       You have now extracted the required files to modify the HOME Menu. The
-      files in the RomFS are compressed, but unlike usual compression you might've
-      already heard of <br />(.zip, .rar, .7z, .tar.gz, etc.), these files are
-      compressed with LZ compression.
+      files in the RomFS are compressed, but unlike usual compression you
+      might've already heard of <br />(.zip, .rar, .7z, .tar.gz, etc.), these
+      files are compressed with LZ compression.
     </p>
     <h3 id="decompress-lz">To decompress files:</h3>
     <ul>
@@ -331,7 +349,9 @@
       </li>
     </ul>
     <h3 id="editing-sleep-menu">Section III - Editing the Sleep Menu</h3>
-    <p>In this Section, we will be editing the Sleep Menu text and it's colors.</p>
+    <p>
+      In this Section, we will be editing the Sleep Menu text and it's colors.
+    </p>
     <h3 id="msbt-edit-text">Part I - Editing the Text</h3>
     <ol>
       <li>
@@ -555,7 +575,8 @@
         Get your desired color (using the website mentioned in the
         <a href="#prerequisites">prerequisites</a> or any other method to get
         HTML hex colors) and copy the color value (without the <code>#</code>).
-        Then, select 3 bytes, starting from the offset of the color you want to modify, and press
+        Then, select 3 bytes, starting from the offset of the color you want to
+        modify, and press
         <code>CTRL + V</code>
         to replace the existing value with your value.
       </li>
@@ -569,8 +590,9 @@
       Section IV - Editing the Applet Icons
     </h3>
     <p>
-      In this section, we will be editing the color of the HOME Menu Applet Icons 
-      and their respective banners. (Notes, Friends, Notifications, Miiverse, etc.)
+      In this section, we will be editing the color of the HOME Menu Applet
+      Icons and their respective banners. (Notes, Friends, Notifications,
+      Miiverse, etc.)
     </p>
     <h3 id="editing-applet-color">Part I - Changing the Applet Icon Colors</h3>
     <ol>
@@ -625,11 +647,18 @@
           <img src="img/hxd-edit-applet-icons.png" />
         </a>
       </div>
-      <li>Get a color of your choosing using the website mentioned in the <a href="#prerequisites">prerequisites</a>, and copy it to the clipboard (without the <code>#</code>). Now, select 3 bytes from the offset of the color you want to change, and press <code>CTRL + V</code> to replace the existing color with the color you have copied.</li>
+      <li>
+        Get a color of your choosing using the website mentioned in the
+        <a href="#prerequisites">prerequisites</a>, and copy it to the clipboard
+        (without the <code>#</code>). Now, select 3 bytes from the offset of the
+        color you want to change, and press <code>CTRL + V</code> to replace the
+        existing color with the color you have copied.
+      </li>
       <li>
         Once you are done making changes, save the file using
-        <code>File -> Save</code> or <code>CTRL + S</code>. <br> After saving the
-        file, make sure to <a href="#compress-lz">recompress</a> it.
+        <code>File -> Save</code> or <code>CTRL + S</code>. <br />
+        After saving the file, make sure to
+        <a href="#compress-lz">recompress</a> it.
       </li>
     </ol>
     <h3 id="editing-banner-color">
@@ -676,9 +705,9 @@
         <code>#</code>)
       </li>
       <li>
-        To modify a color, select 3 bytes, starting from the offset and
-        use <code>CTRL + V</code> to replace the existing value with the value
-        you just copied
+        To modify a color, select 3 bytes, starting from the offset and use
+        <code>CTRL + V</code> to replace the existing value with the value you
+        just copied
       </li>
       <li>
         Once you are done making changes, save the file using
@@ -709,9 +738,9 @@
       </li>
       <li>
         You can now edit the <code>Color</code> and <code>Position</code> values
-        for the elements of your choosing on the bottom of the Cheat Engine Window,
-        by checking the boxes of the elements you want to edit, and changing
-        their values, as shown here:
+        for the elements of your choosing on the bottom of the Cheat Engine
+        Window, by checking the boxes of the elements you want to edit, and
+        changing their values, as shown here:
         <div class="blue">
           <span>(Click on the image to open in it a new tab)</span>
           <a href="img/cheat-engine-edit-values.png" target="_blank">
@@ -829,8 +858,8 @@
         Where <code>&ltfilename you noted&gt</code> is the name of the file you
         noted before deleting it.<br />
         <br />
-        You should now see a new file that was created, with the same name as the file you just
-        deleted.
+        You should now see a new file that was created, with the same name as
+        the file you just deleted.
       </li>
       <li>
         We are now going to build the decrypted CIA. To do this, run the
@@ -877,14 +906,16 @@
           <li>
             Take both the parts, and align them like this:
             <code>&ltpart 1&gt:&ltpart 2&gt</code>. <br />
-            For me, that is going to be <code>0:89</code>. This is the content index.
+            For me, that is going to be <code>0:89</code>. This is the content
+            index.
           </li>
         </ul>
       </li>
       <li>
         After running that command, you should now see that
-        <code>CustomHomeMenu.cia</code> was created. <br> We still have some stuff to
-        do, so don't go and install the CIA right away.
+        <code>CustomHomeMenu.cia</code> was created. <br />
+        We still have some stuff to do, so don't go and install the CIA right
+        away.
       </li>
     </ol>
     <h3 id="encrypting-cia">Part II - Encrypting the CIA</h3>
@@ -920,7 +951,9 @@
         <code>Encryption success</code>, and then press START to reboot your 3DS
       </li>
     </ol>
-    <h3 id="installing-custom-home-menu">Part III - Installing the Custom HOME Menu</h3>
+    <h3 id="installing-custom-home-menu">
+      Part III - Installing the Custom HOME Menu
+    </h3>
     <ol>
       <li>On your 3DS, open FBI</li>
       <li>
@@ -938,30 +971,39 @@
         <code>Install finished.</code>, manually power your 3DS off and on again
       </li>
     </ol>
-    <div class="blue">If your 3DS crashes when FBI reaches 100% installing, don't worry, this seems to be normal. Press any button to reboot your 3DS.</div>
+    <div class="blue">
+      If your 3DS crashes when FBI reaches 100% installing, don't worry, this
+      seems to be normal. Press any button to reboot your 3DS.
+    </div>
     <p>
       You're done! If everything went well, you should now see your changes made
       to the HOME/Sleep Menu.
-      <br>
-      <br>
+      <br />
+      <br />
       Here is an example of an edited HOME Menu:
-
-      <div class="borderless-image">
-        <a href="img/3ds-custom-home-menu-example.png" target="_blank">
-          <img src="img/3ds-custom-home-menu-example.png" />
-        </a>
-      </div>
-
-      <br>
-      <br>
-      <p>And here, we have an example of an edited Sleep Menu:</p>
-      <div class="borderless-image">
-        <a href="img/3ds-custom-sleep-menu-example.png" target="_blank">
-          <img src="img/3ds-custom-sleep-menu-example.png" />
-        </a>
-      </div>
     </p>
-    <div class="blue">To revert back to the stock HOME Menu, install the <code>backup_</code> CIA you made in FBI.</div>
-    <div class="blue">To install a different custom HOME Menu CIA, you have to reinstall the original backup CIA first, then install the custom HOME Menu CIA.</div>
+
+    <div class="borderless-image">
+      <a href="img/3ds-custom-home-menu-example.png" target="_blank">
+        <img src="img/3ds-custom-home-menu-example.png" />
+      </a>
+    </div>
+
+    <br />
+    <br />
+    <p>And here, we have an example of an edited Sleep Menu:</p>
+    <div class="borderless-image">
+      <a href="img/3ds-custom-sleep-menu-example.png" target="_blank">
+        <img src="img/3ds-custom-sleep-menu-example.png" />
+      </a>
+    </div>
+    <div class="blue">
+      To revert back to the stock HOME Menu, install the
+      <code>backup_</code> CIA you made in FBI.
+    </div>
+    <div class="blue">
+      To install a different custom HOME Menu CIA, you have to reinstall the
+      original backup CIA first, then install the custom HOME Menu CIA.
+    </div>
   </body>
 </html>
