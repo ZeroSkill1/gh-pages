@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3DS Home Menu Customization Guide</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="shortcut icon" href="favicon.ico" />
+  </head>
+  <body>
+    <h1>Nintendo 3DS HOME Menu Customization Guide</h1>
+    <div class="red">
+      Before doing anything, please be sure to
+      <a
+        href="https://3ds.hacks.guide/godmode9-usage.html#creating-a-nand-backup"
+        target="_blank"
+        >create a NAND backup using GodMode9</a
+      >! This guide involves directly modifying the HOME Menu system title.
+      There is always a chance of a softbrick.
+    </div>
+    <div class="red">
+      Having a custom HOME Menu installed will cause system updates to stop
+      working. If you want to update your system, you will have to restore your
+      HOME Menu with an encrypted and unmodified HOME Menu CIA first.
+    </div>
+    <h3>
+      My Discord tag is <code>TimmSkiller#3498</code> if you have any
+      questions/suggestions.
+    </h3>
+    <hr />
+    <h2>Table of contents</h2>
+    <a href="#prerequisites">Prerequisites</a>
+    <ol>
+      <li>
+        <a href="#preparation-work">I - Preparation</a>
+      </li>
+      <li>
+        <a href="#homemenu-extract-decompress"
+          >II - Unpacking and Decompressing the HOME Menu</a
+        >
+        <ul>
+          <li>
+            <a href="#extract-home-menu">I - Extracting the HOME Menu</a>
+          </li>
+          <li>
+            <a href="#compress-decompress-lz"
+              >II - Compressing/Decompressing Files</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#editing-sleep-menu">III - Editing the Sleep Menu</a>
+        <ul>
+          <li><a href="#msbt-edit-text">I - Changing the Text</a></li>
+          <li><a href="#msbt-edit-colors">II - Changing the Colors</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#editing-home-menu-applet-icons"
+          >IV - Editing the HOME Menu Applet Icons</a
+        >
+        <ul>
+          <li>
+            <a href="#editing-applet-color">I - Changing the Applet Icon Colors</a>
+          </li>
+          <li>
+            <a href="#editing-banner-color">II - Changing the Applet Banner Colors</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#editing-hud">V - Editing the HUD</a>
+      </li>
+      <li>
+        <a href="#rebuilding-and-installing">VI - Repacking, Encrypting, and Installing</a>
+        <ul>
+          <li><a href="#repack-cxi">I - Repacking</a></li>
+          <li><a href="#encrypting-cia">II - Encrypting the CIA</a></li>
+          <li><a href="#installing-custom-home-menu">III - Installing the Custom HOME Menu</a></li>
+        </ul>
+      </li>
+    </ol>
+    <h1>Getting Started</h1>
+    <hr />
+    <p>
+      In this guide, we will be customizing the appearance of the Nintendo 3DS
+      HOME Menu (and Sleep Menu). We certainly will not cover everything you
+      could customize, but this guide should give you an idea as to what extent
+      you can personalize your device. If you would like to customize aspects of
+      it that are not listed on here, I suggest checking out the
+      <a
+        href="https://docs.google.com/spreadsheets/d/1Q-Im3P5zSqNi6zYqaXtyS138hCdcIJDY7WxRt_FWdrg/edit"
+        target="_blank"
+        >documentation</a
+      >.
+    </p>
+    <h3 id="prerequisites">Prerequisites:</h3>
+    <ul>
+      <li>
+        A Hex Editor of your choice,
+        <a
+          href="https://mh-nexus.de/en/downloads.php?product=HxD"
+          target="_blank"
+          >HxD</a
+        >
+        is recommended
+      </li>
+      <li>
+        The latest version of
+        <a
+          href="https://github.com/IcySon55/3DLandMSBTeditor/releases/latest"
+          target="_blank"
+          >MSBT Editor Reloaded</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/dnasdw/3dstool/releases/latest"
+          target="_blank"
+          >3dstool</a
+        >,
+        <a
+          href="https://github.com/3DSGuy/Project_CTR/releases/tag/ctrtool-v0.7"
+          target="_blank"
+          >ctrtool</a
+        >, and
+        <a
+          href="https://github.com/3DSGuy/Project_CTR/releases/tag/makerom-v0.17"
+          target="_blank"
+          >makerom</a
+        >
+      </li>
+      <li>
+        The latest version of
+        <a href="http://www.cheatengine.org/download.php" target="_blank"
+          >Cheat Engine</a
+        >
+      </li>
+      <li>The <a href="HMEPositions.CT">HME Positions by DeKay.CT</a> file</li>
+      <li>
+        <a href="http://www.color-hex.com/">Hex Colors</a>, to get hex values
+        from colors
+      </li>
+      <li>
+        <a
+          href="https://en.wikipedia.org/wiki/Coordinate_system"
+          target="_blank"
+          >Knowledge on how to work with Coordinates</a
+        >
+      </li>
+    </ul>
+    <h3 id="preparation-work">Section I - Preparation Work</h3>
+    <p>In this section, we will be:</p>
+    <ul>
+      <li>
+        Dumping our original HOME Menu as a CIA into <code>sd:/gm9/out</code>.
+      </li>
+      <li>
+        Making a copy of the dumped CIA, called <code>backup_&ltTitle ID&gt.cia</code>, and placing it in a safe location in case of failure.
+      </li>
+      <li>
+        Decrypting the first copy of the dumped CIA, which will enable us to make modifications to it later.
+      </li>
+    </ul>
+    <h3>Part I - 3DS</h3>
+    <ol>
+      <li>Hold START while powering on your 3DS to boot into GodMode9</li>
+      <li>
+        Once you are in GodMode9, use the DPad to navigate to
+        <code>[1:] SYSNAND CTRNAND</code> , then hold R while pressing A to
+        bring up an options menu
+      </li>
+      <li>
+        Select <code>Search for titles</code>, and wait until it finishes
+        loading
+      </li>
+      <li>
+        Choose the entry (using the DPad) based on the following:
+        <ul>
+          <li>
+            If your console is USA (North American), select the entry starting
+            with <code>0004003000008F02</code>
+          </li>
+          <li>
+            If your console is EUR (European), select the entry starting with
+            <code>0004003000009802</code>
+          </li>
+          <li>
+            If your console is JPN (Japanese), select the entry starting with
+            <code>0004003000008202</code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        Press A on the selected entry to bring up an options menu: <br />
+        <code>TMD file Options...</code> > <code>Build CIA (Standard)</code> to
+        dump the HOME Menu as a CIA into <code>sd:/gm9/out/</code>
+      </li>
+      <li>
+        Once it's done, press B until you're back on the main screen, <br />
+        and open <code>[0:] SDCARD</code> by pressing A. Now, navigate to
+        <code>gm9/out</code>
+      </li>
+      <li>
+        Press Y on the selected CIA, then Y again, press A on
+        <code>Copy path(s)</code> which should ask you to enter a different
+        name. Using the touchpen and the keyboard that just popped up, append
+        <code>backup_</code> to the file name and press <code>SUBMIT</code> on
+        the keyboard to make a copy of the file.
+      </li>
+      <li>
+        You should now have two CIAs. <br />
+        On the one that doesn't start with <code>backup_</code>, press A, <br />
+        <code>CIA image options...</code> ->
+        <code>Decrypt file (0:/gm9/out)</code>, and wait until the process finishes. Press A once it's complete.
+      </li>
+      <li>
+        Press the HOME button, and choose <code>Poweroff system</code> to turn
+        off your 3DS.
+      </li>
+    </ol>
+    <h3>Part II - PC</h3>
+    <ul>
+      <li>
+        Take out your SD card from your 3DS and insert it into your computer.
+      </li>
+      <li>
+        Navigate to <code>gm9/out</code> and copy the
+        <code>backup_&lt;title id&gt.cia</code> to a safe location. This will be
+        used to restore your original HOME Menu in case of failure or if you
+        want to revert the original style.
+      </li>
+      <li>
+        Copy the <code>&lttitle id&gt.cia</code> to a new folder containing the
+        prerequisites.
+      </li>
+    </ul>
+    <h3 id="homemenu-extract-decompress">
+      Section II - Unpacking and Decompressing the HOME Menu
+    </h3>
+    <p>In this section, we will be extracting the CIA dumped in <a href="#preparation">Section I</a>, and learning how to decompress/compress files inside it.</p>
+    <h3 id="extract-home-menu">Part I - Extracting the HOME Menu</h3>
+    <p>At this point, you should have a folder that looks similar to this:</p>
+    <div class="blue">
+      <span>(Click on the image to open in it a new tab)</span>
+      <a href="/img/folder-example.png" target="_blank">
+        <img src="/img/folder-example.png" />
+      </a>
+    </div>
+    <ol>
+      <li>
+        Open a command prompt in the folder you put the prerequisites and the
+        HOME Menu CIA into.
+      </li>
+      <li>
+        Type the following command: <br />
+        <code>ctrtool -xt cia &lt;title id&gt; .cia --contents=Content</code>
+        <br />
+        and press enter to run it, where <code>&lt;title id&gt;.cia</code> is
+        your CIA's file name.
+        <br />
+        <br />
+        You should now see a file appear, starting with
+        <code>Content.0000</code>.
+      </li>
+      <li>
+        In the same command prompt, run the following command: <br />
+        <p class="multiline-code">
+          3dstool -xtf cxi &ltcontent file name&gt --header Header.bin
+          --extendedheader ExHeader.bin --romfs RomFS.bin --exefs ExeFS.bin --plain
+          PlainRegion.bin
+        </p>
+        Where <code>&ltcontent file name&gt</code> is the name of the file
+        starting with <code>Content.0000</code>.
+        <br />
+        You should see these files appear in the folder, like this:
+        <div class="blue">
+          <span>(Click on the image to open in it a new tab)</span>
+          <a href="/img/3dstool-extract.png" target="_blank">
+            <img src="/img/3dstool-extract.png" />
+          </a>
+        </div>
+      </li>
+      <li>
+        Now, run this command to extract the files we need to modify the HOME
+        Menu: <br />
+        <code>3dstool -xtf romfs RomFS.bin --romfs-dir RomFS</code>
+        <br />
+        This will extract the RomFS of the HOME Menu into the
+        <code>RomFS</code> folder.
+      </li>
+    </ol>
+    <h3 id="compress-decompress-lz">
+      Part II - Compressing/Decompressing Files
+    </h3>
+    <p>
+      You have now extracted the required files to modify the HOME Menu. The
+      files in the RomFS are compressed, but unlike usual compression you might've
+      already heard of <br />(.zip, .rar, .7z, .tar.gz, etc.), these files are
+      compressed with LZ compression.
+    </p>
+    <h3 id="decompress-lz">To decompress files:</h3>
+    <ul>
+      <li>
+        In a command prompt, run this command in the folder where you have
+        <code>3dstool</code>:
+        <br />
+        <code> 3dstool --uncompress --compress-type lz --file &ltpath&gt </code>
+        <br />
+        <br />
+        Where <code>&ltpath&gt</code> is the path to the file that you want to
+        decompress. <br />This will decompress the file in place, meaning that
+        it will overwrite the existing file with it's decompressed version.
+      </li>
+    </ul>
+    <p>
+      To repack the HOME Menu later once you're done making changes, you have to
+      make sure that every file you modify is recompressed.
+    </p>
+    <h3 id="compress-lz">To compress files:</h3>
+    <ul>
+      <li>
+        In a command prompt, run this command in the folder where you have
+        <code>3dstool</code>:
+        <br />
+        <code> 3dstool --compress --compress-type lz --file &ltpath&gt </code>
+        <br />
+        <br />
+        Where <code>&ltpath&gt</code> is the path to the file that you want to
+        compress. <br />This will compress the file in place, meaning that it
+        will overwrite the existing file with it's compressed version.
+      </li>
+    </ul>
+    <h3 id="editing-sleep-menu">Section III - Editing the Sleep Menu</h3>
+    <p>In this Section, we will be editing the Sleep Menu text and it's colors.</p>
+    <h3 id="msbt-edit-text">Part I - Editing the Text</h3>
+    <ol>
+      <li>
+        Navigate to: <br />
+        <p class="multiline-code">
+          RomFS\message\&lt;region you want to modify&gt;\&lt;language you want
+          to modify&gt;\
+        </p>
+        In the command prompt, type in the
+        <a href="#decompress-lz">decompression</a> command, and for the path,
+        instead of typing it, drag the <code>message_msbt_LZ.bin</code> file
+        onto the command prompt. This should add the path to the file. You
+        should now see that the file's size has increased a bit, which indicates
+        that the decompression was successful.
+      </li>
+      <li>Launch <code>MSBTEditor</code></li>
+      <li>
+        Open the file you just decompressed, by clicking on
+        <code>File -> Open</code> or by pressing <br />
+        <code>CTRL + O</code>. In the file selection dialog window, at the
+        bottom right, you have to change <br />
+        <code>MSBT Files (*.msbt)</code> to <code>All files (*.*)</code> for the
+        file to show up.
+        <br />
+        <br />
+        If it succeeds at reading the file, you will see a window with these
+        contents:
+        <div class="blue">
+          <span>(Click on the image to open in it a new tab)</span>
+          <a href="/img/msbteditor-mainscreen.png" target="_blank">
+            <img src="/img/msbteditor-mainscreen.png" />
+          </a>
+        </div>
+        <p>
+          You can modify the following values for the Sleep Menu (found on the
+          left side of MSBTEditor):
+        </p>
+        <ul>
+          <li>
+            <code>lau_b_shutdown</code> - the text that shows on the
+            <code>Power Off</code> button
+          </li>
+          <li>
+            <code>lau_press_pow_u0</code> - the text
+            <code>In Sleep Mode, the system can...</code>
+          </li>
+          <li>
+            <code>lau_press_pow_u1</code> - the text that shows below the one
+            above
+          </li>
+          <li>
+            <code>lau_press_pow0</code> - the text that shows
+            <code>Software closed.</code> when pressing the power button while
+            an application is running
+          </li>
+          <li>
+            <code>lau_press_pow1</code> - the text on the bottom screen, that
+            says
+            <code>Return to the HOME Menu</code>
+          </li>
+          <li><code>lau_press_pow2</code> - empty by default</li>
+          <li><code>lau_press_pow3</code> - empty by default</li>
+          <li><code>lau_press_pow4</code> - empty by default</li>
+          <li>
+            <code>lau_press_pow5</code> - the text that shows <br /><code
+              >Close the system to enter Sleep Mode from the HOME Menu.</code
+            >
+            on the top screen
+          </li>
+          <li>
+            <code>lau_press_pow5_flw</code> - this one seems to be custom-made
+            for the original 2DS, which has a sleep switch, it says:<br />
+            <p class="multiline-code">
+              Push the sleep switch right to enter Sleep Mode. You will resume
+              on the HOME Menu.
+            </p>
+          </li>
+        </ul>
+        <p>
+          Do keep in mind that you can change any value, even if it's not
+          related to the Sleep Menu.
+        </p>
+      </li>
+      <li>
+        To modify the text, select the entry of your choosing, which will show
+        you it's value:
+        <div class="blue">
+          <span>(Click on the image to open in it a new tab)</span>
+          <a href="/img/msbteditor-editvalue.png" target="_blank">
+            <img src="/img/msbteditor-editvalue.png" />
+          </a>
+        </div>
+        <p>
+          On the left side, you can see the current value of the entry. On the
+          right side, you can see it's original value. It's made this way so
+          that you can compare the original text with your text.
+        </p>
+      </li>
+      <li>
+        Once you are done making changes, save the file using
+        <code>File -> Save</code> or <code>CTRL + S</code>, and close the
+        program
+      </li>
+      <li>
+        After saving the file and closing MSBTEditor,
+        <a href="#compress-lz">recompress</a> the
+        <code>message_msbt_LZ.bin</code> file, just like before. In the command
+        prompt, enter the compression command, and for the path, just drag the
+        file onto the command prompt. The file size should decrease a bit which
+        will indicate that the compression was successful.
+      </li>
+    </ol>
+    <h3 id="msbt-edit-colors">Part II - Changing the Colors</h3>
+    <ol>
+      <li>
+        <a href="#decompress-lz">Decompress</a> the
+        <code>sleep_LZ.bin</code> file in the <code>RomFS</code> folder. (As
+        usual, type the decompression command and drag the file onto the command
+        prompt to enter the path.)
+      </li>
+      <li>
+        Open the file you just decompressed (<code>RomFS\sleep_LZ.bin</code>) in
+        HxD
+      </li>
+      <li>These are the values you can modify:</li>
+      <table class="tg">
+        <tr>
+          <th>Description</th>
+          <th>
+            Bottom Screen <br />
+            Offset<br />
+          </th>
+          <th>
+            Top Screen <br />
+            Offset<br />
+          </th>
+        </tr>
+        <tr>
+          <td>Background</td>
+          <td>0x1260</td>
+          <td>0x1CD4</td>
+        </tr>
+        <tr>
+          <td>Background Glow</td>
+          <td>0x1264</td>
+          <td>0x1CD8</td>
+        </tr>
+        <tr>
+          <td>Background Stripes</td>
+          <td>0x125C</td>
+          <td>0x1CD0</td>
+        </tr>
+        <tr>
+          <td>Header Color</td>
+          <td>-</td>
+          <td>0x1D70</td>
+        </tr>
+        <tr>
+          <td>Text Color</td>
+          <td>0x12FC</td>
+          <td>0x1DA4</td>
+        </tr>
+        <tr>
+          <td>Footer Color</td>
+          <td>0x122C</td>
+          <td>0x1EA8</td>
+        </tr>
+        <tr>
+          <td>Line Color</td>
+          <td>0x1554</td>
+          <td>0x1E24</td>
+        </tr>
+        <tr>
+          <td>Button Text Color</td>
+          <td>0x14D4</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Button Text Mask</td>
+          <td>0x14A0</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Button Color</td>
+          <td>
+            0x132C <br />
+            and <br />
+            0x13E4
+          </td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Button Glow</td>
+          <td>
+            0x1330 <br />
+            and <br />
+            0x13E8
+          </td>
+          <td>-</td>
+        </tr>
+      </table>
+      <li>
+        To jump to a value without looking for it manually, press
+        <code>Ctrl + G</code> and enter the offset value you want, excluding
+        <code>0x</code>.
+      </li>
+      <li>
+        Each of these values are 3 bytes in size. Each byte represents the
+        <span class="red-text">red</span>,
+        <span class="green-text">green</span>, and
+        <span class="blue-text">blue</span> colors respectively, as shown in
+        this image:
+        <div class="blue">
+          <span>(Click on the image to open in it a new tab)</span>
+          <a href="/img/hxd-edit-sleep-colors.png" target="_blank"
+            ><img src="/img/hxd-edit-sleep-colors.png"
+          /></a>
+        </div>
+      </li>
+      <li>
+        Get your desired color (using the website mentioned in the
+        <a href="#prerequisites">prerequisites</a> or any other method to get
+        HTML hex colors) and copy the color value (without the <code>#</code>).
+        Then, select 3 bytes, starting from the offset of the color you want to modify, and press
+        <code>CTRL + V</code>
+        to replace the existing value with your value.
+      </li>
+      <li>
+        Once you are done making changes, save the file using
+        <code>File -> Save</code> or <code>CTRL + S</code>. After saving the
+        file, make sure to <a href="#compress-lz">recompress</a> it.
+      </li>
+    </ol>
+    <h3 id="editing-home-menu-applet-icons">
+      Section IV - Editing the Applet Icons
+    </h3>
+    <p>
+      In this section, we will be editing the color of the HOME Menu Applet Icons 
+      and their respective banners. (Notes, Friends, Notifications, Miiverse, etc.)
+    </p>
+    <h3 id="editing-applet-color">Part I - Changing the Applet Icon Colors</h3>
+    <ol>
+      <li>
+        <a href="#decompress-lz">Decompress</a> the
+        <code>launcher_LZ.bin</code> file in the <code>RomFS</code> folder.
+      </li>
+      <li>Open the file you just decompressed in HxD</li>
+      <p>These are the values you can modify:</p>
+      <table class="tg">
+        <tr>
+          <th>Icon</th>
+          <th>Color 1 Offset</th>
+          <th>Color 2 Offset</th>
+        </tr>
+        <tr>
+          <td>Miiverse</td>
+          <td>0x31DA8</td>
+          <td>0x31DAC</td>
+        </tr>
+        <tr>
+          <td>Internet Browser</td>
+          <td>0x31E84</td>
+          <td>0x31E88</td>
+        </tr>
+        <tr>
+          <td>Notifications</td>
+          <td>0x31F60</td>
+          <td>0x31F64</td>
+        </tr>
+        <tr>
+          <td>Friend List</td>
+          <td>0x3203C</td>
+          <td>0x32040</td>
+        </tr>
+        <tr>
+          <td>Game Notes<br /></td>
+          <td>0x32118</td>
+          <td>0x3211C</td>
+        </tr>
+      </table>
+      <p>
+        Just like before, each value is 3 bytes long, and each byte represents
+        the <span class="red-text">red</span>,
+        <span class="green-text">green</span>, and
+        <span class="blue-text">blue</span> colors respectively, as shown in
+        this image:
+      </p>
+      <div class="blue">
+        <span>(Click on the image to open in it a new tab)</span>
+        <a href="/img/hxd-edit-applet-icons.png" target="_blank">
+          <img src="/img/hxd-edit-applet-icons.png" />
+        </a>
+      </div>
+      <li>Get a color of your choosing using the website mentioned in the <a href="#prerequisites">prerequisites</a>, and copy it to the clipboard (without the <code>#</code>). Now, select 3 bytes from the offset of the color you want to change, and press <code>CTRL + V</code> to replace the existing color with the color you have copied.</li>
+      <li>
+        Once you are done making changes, save the file using
+        <code>File -> Save</code> or <code>CTRL + S</code>. <br> After saving the
+        file, make sure to <a href="#compress-lz">recompress</a> it.
+      </li>
+    </ol>
+    <h3 id="editing-banner-color">
+      Part II - Changing the Applet Banner Colors
+    </h3>
+    <p>The files responsible for the banners are:</p>
+    <ul>
+      <li><code>RomFS\3D\BannerAppletFriend_LZ.bin</code> - Friends</li>
+      <li><code>RomFS\3D\BannerAppletMemo_LZ.bin</code> - Game Notes</li>
+      <li><code>RomFS\3D\BannerAppletMvs_LZ.bin</code> - Miiverse</li>
+      <li><code>RomFS\3D\BannerAppletNews_LZ.bin</code> - Notifications</li>
+      <li><code>RomFS\3D\BannerAppletWeb_LZ.bin</code> - Internet Browser</li>
+    </ul>
+    <p>
+      These are the offsets for the colors, they are the same for each banner:
+    </p>
+    <table class="tg">
+      <tr>
+        <th>Color 1</th>
+        <th>Color 2</th>
+      </tr>
+      <tr>
+        <td>0x1D7C</td>
+        <td>0x1D80</td>
+      </tr>
+    </table>
+    <p>
+      Again, the values are 3 bytes long, with each byte representing the
+      <span class="red-text">red</span>, <span class="green-text">green</span>,
+      and <span class="blue-text">blue</span> colors respectively.
+    </p>
+    <ol>
+      <li>
+        <a href="#decompress-lz">Decompress</a> the file you want to modify
+      </li>
+      <li>
+        Open the file you just decompressed in HxD, and navigate to each color
+        offset using <code>CTRL + G</code>, entering the offset without the
+        <code>0x</code> part
+      </li>
+      <li>
+        Get your color from the website mentioned in the
+        <a href="#prerequisites">prerequisites</a> and copy it (without the
+        <code>#</code>)
+      </li>
+      <li>
+        To modify a color, select 3 bytes, starting from the offset and
+        use <code>CTRL + V</code> to replace the existing value with the value
+        you just copied
+      </li>
+      <li>
+        Once you are done making changes, save the file using
+        <code>File -> Save</code> or <code>CTRL + S</code>, then
+        <a href="#compress-lz">recompress the file</a>.
+      </li>
+    </ol>
+    <p></p>
+    <h3 id="editing-hud">
+      Section V - Editing the HUD (Holographic User Display)
+    </h3>
+    <p>
+      In this section, we will be modifying the layout of the HUD on the top
+      screen of the HOME Menu.
+    </p>
+    <ol>
+      <li>
+        <a href="#decompress-lz">Decompress</a> the <code>hud_LZ.bin</code> file
+        in the <code>RomFS</code> folder.
+      </li>
+      <li>
+        Open Cheat Engine and open the file you just decompressed (If you get an
+        error, just press OK and continue)
+      </li>
+      <li>
+        Drag the <code>HME_Positions_By_DeKay.CT</code> file onto the Cheat
+        Engine Window
+      </li>
+      <li>
+        You can now edit the <code>Color</code> and <code>Position</code> values
+        for the elements of your choosing on the bottom of the Cheat Engine Window,
+        by checking the boxes of the elements you want to edit, and changing
+        their values, as shown here:
+        <div class="blue">
+          <span>(Click on the image to open in it a new tab)</span>
+          <a href="/img/cheat-engine-edit-values.png" target="_blank">
+            <img src="/img/cheat-engine-edit-values.png" />
+          </a>
+        </div>
+        <p>
+          For coordinates, take a look at this picture to understand it a little
+          more:
+        </p>
+        <div class="borderless-image">
+          <p>(Click on the image to open in it a new tab)</p>
+          <a href="/img/3ds-coordinates.png" target="_blank">
+            <img src="/img/3ds-coordinates.png" />
+          </a>
+        </div>
+        This is how the coordinates work:
+        <table class="tg">
+          <th>X Coordinate Value</th>
+          <th>Y Coordinate Value</th>
+          <th>Resulting area of object</th>
+          <tr>
+            <td>Negative</td>
+            <td>Positive</td>
+            <td>Top Left</td>
+          </tr>
+          <tr>
+            <td>Positive</td>
+            <td>Positive</td>
+            <td>Top Right</td>
+          </tr>
+          <tr>
+            <td>Negative</td>
+            <td>Negative</td>
+            <td>Bottom Left</td>
+          </tr>
+          <tr>
+            <td>Negative</td>
+            <td>Negative</td>
+            <td>Bottom Right</td>
+          </tr>
+        </table>
+      </li>
+      <ul>
+        <li>
+          To remove an element, you can set the <code>Position</code> value of
+          the corresponding element to a very high number, by double clicking on
+          the value and entering a new value.
+          <br />
+          <br />
+          Do however keep in mind that internally, the object will still be
+          rendered, but it will not be visible as you are moving it out of view.
+        </li>
+        <li>
+          This method does not work for the connection status bar. If you want
+          to remove it, open <code>hud_LZ.bin</code> in HxD and change the
+          following offsets to <code>00</code>:
+          <ul>
+            <li><code>0x97E2</code></li>
+            <li><code>0x98A2</code></li>
+            <li><code>0x9962</code></li>
+          </ul>
+          <p>These values are 1 byte long.</p>
+        </li>
+      </ul>
+      <li>
+        When making changes, make sure the box on the left of each element you
+        modified has a red cross in it (click inside the box to make it appear).
+      </li>
+      <li>
+        Close Cheat Engine, and <a href="#compress-lz">recompress</a>
+        <code>hud_LZ.bin</code>.
+      </li>
+    </ol>
+    <h3 id="rebuilding-and-installing">
+      Section VI - Repacking, Encrypting, and Installing
+    </h3>
+    <p>
+      In this section, we will be repacking, encrypting, and installing our
+      modified HOME Menu.
+    </p>
+    <h3 id="repack-cxi">Part I - Repacking</h3>
+    <ol>
+      <li>
+        Open a command prompt in the folder where you have the
+        <code>RomFS</code> folder and the other extracted files (<code
+          >ExHeader.bin, Header.bin, ExeFS.bin, RomFS.bin, and
+          PlainRegion.bin</code
+        >).
+      </li>
+      <li>
+        We need to repack the RomFS (the RomFS is where the files you modified
+        are stored). <br />Before we do so, delete the existing
+        <code>RomFS.bin</code> file. <br />Once that's deleted, run the
+        following command:
+        <p class="multiline-code">
+          3dstool -ctf romfs RomFS.bin --romfs-dir RomFS
+        </p>
+        <br />
+        This command will repack the RomFS into a new
+        <code>RomFS.bin</code>.
+      </li>
+      <li>
+        Now, we are going to rebuild the executable HOME Menu. <br />
+        Before doing this, note the name of the file starting with
+        <code>Content.0000</code>. <br />Once you have noted the file name,
+        delete the file. <br />
+        <br />
+        To then rebuild the file, run this command:
+        <p class="multiline-code">
+          3dstool -ctf cxi &ltfilename you noted&gt --header Header.bin
+          --extendedheader ExHeader.bin --exefs ExeFS.bin --romfs RomFS.bin
+          --plain PlainRegion.bin
+        </p>
+        Where <code>&ltfilename you noted&gt</code> is the name of the file you
+        noted before deleting it.<br />
+        <br />
+        You should now see a new file that was created, with the same name as the file you just
+        deleted.
+      </li>
+      <li>
+        We are now going to build the decrypted CIA. To do this, run the
+        following command:
+        <p class="multiline-code">
+          makerom -f cia -o CustomHomeMenu.cia -i &ltcontent file
+          name&gt:&ltcontent index&gt -ignoresign
+        </p>
+        <code>&ltcontent file name&gt</code> is the name of the newly created
+        file (which starts with <code>Content.0000</code>). Now,
+        <code>&ltcontent index&gt</code> is easy to get, but if done wrong, it
+        can cause a soft brick, so follow these instructions carefully:
+        <ul>
+          <li>
+            From the content file name, (in this example, I'll be using
+            <code>Content.0000.00000089</code>), take the part after
+            <code>Content.</code>. In my case, this is just
+            <code>0000.00000089</code>.
+          </li>
+          <li>
+            Split that part at the <code>.</code>, for me, this is what I have
+            now: <code>0000</code> and <code>00000089</code>.
+          </li>
+
+          <li>
+            Basically, what are are doing is removing any leading zeros from
+            both parts:
+            <ul>
+              <li>
+                The first part, <code>0000</code>, is going to turn into just
+                <code>0</code>.
+              </li>
+              <li>
+                The second part, <code>00000089</code> is going to turn into
+                <code>89</code>.
+              </li>
+              Now, we have
+              <code>0</code>
+              and
+              <code>89</code
+              >. The order matters.
+            </ul>
+          </li>
+          <li>
+            Take both the parts, and align them like this:
+            <code>&ltpart 1&gt:&ltpart 2&gt</code>. <br />
+            For me, that is going to be <code>0:89</code>. This is the content index.
+          </li>
+        </ul>
+      </li>
+      <li>
+        After running that command, you should now see that
+        <code>CustomHomeMenu.cia</code> was created. <br> We still have some stuff to
+        do, so don't go and install the CIA right away.
+      </li>
+    </ol>
+    <h3 id="encrypting-cia">Part II - Encrypting the CIA</h3>
+    <ol>
+      <li>
+        Power off your 3DS and take out the SD card and insert it into your
+        computer
+      </li>
+      <li>
+        Copy the <code>CustomHomeMenu.cia</code> you just made on the root your
+        SD Card
+      </li>
+      <li>
+        Unmount and unplug your SD Card from your computer, and insert it back
+        into your 3DS
+      </li>
+      <li>Power on your 3DS while holding START to boot into GodMode9</li>
+      <li>
+        Once GodMode9 is loaded, open <code>[0:] SDCARD</code> by pressing A
+      </li>
+      <li>
+        Using the DPad, scroll down until you find the
+        <code>CustomHomeMenu.cia</code> file, and select it
+      </li>
+      <li>
+        Press A to bring up an options menu:<br />
+        <p class="multiline-code">
+          CIA image options -> Encrypt file (...) -> Encrypt inplace
+        </p>
+      </li>
+      <li>
+        Wait for the process to finish, and press A when it says
+        <code>Encryption success</code>, and then press START to reboot your 3DS
+      </li>
+    </ol>
+    <h3 id="installing-custom-home-menu">Part III - Installing the Custom HOME Menu</h3>
+    <ol>
+      <li>On your 3DS, open FBI</li>
+      <li>
+        In FBI, open <code>SD</code>, which is the first option by pressing A
+      </li>
+      <li>
+        Scroll down until you find the <code>CustomHomeMenu.cia</code> file, and
+        press A to bring up the actions menu
+      </li>
+      <li>
+        Choose <code>Install CIA</code> and press A again to confirm installing
+      </li>
+      <li>
+        You should now see FBI installing the CIA. Once you see
+        <code>Install finished.</code>, manually power your 3DS off and on again
+      </li>
+    </ol>
+    <div class="blue">If your 3DS crashes when FBI reaches 100% installing, don't worry, this seems to be normal. Press any button to reboot your 3DS.</div>
+    <p>
+      You're done! If everything went well, you should now see your changes made
+      to the HOME/Sleep Menu.
+      <br>
+      <br>
+      Here is an example of an edited HOME Menu:
+
+      <div class="borderless-image">
+        <a href="/img/3ds-custom-home-menu-example.png" target="_blank">
+          <img src="/img/3ds-custom-home-menu-example.png" />
+        </a>
+      </div>
+
+      <br>
+      <br>
+      <p>And here, we have an example of an edited Sleep Menu:</p>
+      <div class="borderless-image">
+        <a href="/img/3ds-custom-sleep-menu-example.png" target="_blank">
+          <img src="/img/3ds-custom-sleep-menu-example.png" />
+        </a>
+      </div>
+    </p>
+    <div class="blue">To revert back to the stock HOME Menu, install the <code>backup_</code> CIA you made in FBI.</div>
+    <div class="blue">To install a different custom HOME Menu CIA, you have to reinstall the original backup CIA first, then install the custom HOME Menu CIA.</div>
+  </body>
+</html>
