@@ -1,2 +1,2 @@
-# TimmSkiller.github.io
+# zeroskill.github.io
 A guide for modifying the Nintendo 3DS HOME Menu
